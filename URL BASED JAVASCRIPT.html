@@ -8,6 +8,11 @@ $(document).ready(function() {
 
 
 ////////////////////////////////////////////
+//////////////////////// start responsive
+
+
+
+////////////////////////////////////////////
 //////////////////////// first if
 var checkHOST = ["webstage.keele.ac.uk", "cms.keele.ac.uk"]
 var checkURL = [
@@ -59,17 +64,28 @@ var checkURL = [
 				"\/ugcourses\/",
 				"\/whatson\/"
 				];
-for(var p in checkURL){
-   if(window.location.pathname.indexOf(checkURL[p]) > -1) {
-      // alert("your url contains the string " + checkURL[p]);
-      addResponsive();
-   }
+
+function URLer () {
+	for(var p in checkURL){
+	   	if(window.location.pathname.indexOf(checkURL[p]) > -1) {
+			console.log('URLer');
+	   		return true;
+   		} else { console.log('not a URLer') };
+	};
 };
-for(var p in checkHOST){
-   if(window.location.hostname == (checkHOST[p]) ) {
-      // alert("your host contains the string " + checkHOST[p]);
-      addResponsive();
-   }
+
+function HOSTer () {
+	for(var p in checkHOST){
+   		if(window.location.hostname == (checkHOST[p]) ) {
+			console.log('HOSTer');
+   			return true;
+   		} else { console.log('not a HOSTer') };
+	};
+};
+
+if ( URLer() || HOSTer() ) {
+	console.log('running responsive');
+	addResponsive();
 };
 
 function addResponsive () {
@@ -83,7 +99,7 @@ function addResponsive () {
 			console.log("addR ran");
 };
 
-////////////////// end first if
+////////////////// end responsive
 ///////////////////////////////
 
 
