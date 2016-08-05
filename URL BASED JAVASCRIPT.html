@@ -6,85 +6,24 @@
 $(document).ready(function() {
 
 
+		if (window.location.hostname == "webstage.keele.ac.uk" || window.location.hostname == "cms.keele.ac.uk" || window.location.hostname == "search.keele.ac.uk" || document.URL.indexOf("cb-ietest") != -1 || document.URL.indexOf("/pressreleases/") != -1 || document.URL.indexOf("/clearing/") != -1 || document.URL.indexOf("/hbetas/kpage/") != -1 || document.URL.indexOf("/smartminds/") != -1 || document.URL.indexOf("/smartbtec/") != -1 || document.URL.indexOf("/clear2015/") != -1 || document.URL.indexOf("/privacy/") != -1 || document.URL.indexOf("/mobile-app/") != -1 || document.URL.indexOf("/contactus/") != -1 || document.URL.indexOf("/keelecard/") != -1 || document.URL.indexOf("/artskeele/") != -1 || document.URL.indexOf("/18-reasons/") != -1  || document.URL.indexOf("/events-welcome/") != -1 || document.URL.indexOf("/offerholders/") != -1  || document.URL.indexOf("/bus/") != -1 || document.URL.indexOf("/ugcourses/") != -1 || document.URL.indexOf("/graduation/") != -1 || document.URL.indexOf("/kms/") != -1 || document.URL.indexOf("/scm/") != -1 || document.URL.indexOf("/scm/") != -1 || document.URL.indexOf("/nursingandmidwifery/") != -1 || document.URL.indexOf("/music/") != -1 || document.URL.indexOf("/filmstudies/") != -1 || document.URL.indexOf("/english/") != -1 || document.URL.indexOf("/americanstudies/") != -1 || document.URL.indexOf("/sspp/") != -1 || document.URL.indexOf("/history/") != -1 || document.URL.indexOf("/lifesci/") != -1 || document.URL.indexOf("/healthandrehabilitation/") != -1  || document.URL.indexOf("/pharmacy/") != -1  || document.URL.indexOf("/law/") != -1  || document.URL.indexOf("/spgs/") != -1  || document.URL.indexOf("/forensic/") != -1  || document.URL.indexOf("/chemistry/") != -1  || document.URL.indexOf("/gge/") != -1  || document.URL.indexOf("/physics/") != -1  || document.URL.indexOf("/psychology/") != -1  || document.URL.indexOf("/spire/") != -1  || document.URL.indexOf("/mcc/") != -1  || document.URL.indexOf("/ilas/") != -1  || document.URL.indexOf("/hums/") != -1 || document.URL.indexOf("/newsevents/") != -1 || document.URL.indexOf("/alumni/") != -1  || document.URL.indexOf("/whatson/") != -1 || document.URL.indexOf("/prospectus/") != -1 || document.URL.indexOf("/social-media/") != -1 ) {
 
-////////////////////////////////////////////
-//////////////////////// first if
-var checkHOST = ["webstage.keele.ac.uk", "cms.keele.ac.uk"]
-var checkURL = [
-				//sublime sort watch for final comma
-				"\/18-reasons\/",
-				"\/aboutus\/",
-				"\/alumni\/",
-				"\/americanstudies\/",
-				"\/artskeele\/",
-				"\/bus\/",
-				"\/chemistry\/",
-				"\/clearing\/",
-				"\/contactus\/",
-				"\/english\/",
-				"\/events-welcome\/",
-				"\/filmstudies\/",
-				"\/forensic\/",
-				"\/gge\/",
-				"\/graduation\/",
-				"\/healthandrehabilitation\/",
-				"\/history\/",
-				"\/hums\/",
-				"\/hums\/",
-				"\/ilas\/",
-				"\/keelecard\/",
-				"\/keelecard\/",
-				"\/kms\/",
-				"\/law\/",
-				"\/lifesci\/",
-				"\/mcc\/",
-				"\/mobile-app\/",
-				"\/music\/",
-				"\/newsevents\/",
-				"\/nursingandmidwifery\/",
-				"\/offerholders\/",
-				"\/pharmacy\/",
-				"\/physics\/",
-				"\/pressreleases\/",
-				"\/privacy\/",
-				"\/prospectus\/",
-				"\/psychology\/",
-				"\/scm\/",
-				"\/smartminds\/",
-				"\/smartbtec\/",
-				"\/social-media\/",
-				"\/spgs\/",
-				"\/spire\/",
-				"\/sspp\/",
-				"\/ugcourses\/",
-				"\/whatson\/"
-				];
-for(var p in checkURL){
-   if(window.location.pathname.indexOf(checkURL[p]) > -1) {
-      // alert("your url contains the string " + checkURL[p]);
-      addResponsive();
-   }
-};
-for(var p in checkHOST){
-   if(window.location.hostname == (checkHOST[p]) ) {
-      // alert("your host contains the string " + checkHOST[p]);
-      addResponsive();
-   }
-};
+				// append mobile scripts
+				$('body').append('<link rel="stylesheet" type="text/css" href="/jq/kresp/kresp.css"><script type="text/javascript" src="/jq/kresp/kresp.js"></sc' + 'ript>');
 
-function addResponsive () {
-			// append mobile scripts
-			$('body').append('<link rel="stylesheet" type="text/css" href="/jq/kresp/kresp.css"><script type="text/javascript" src="/jq/kresp/kresp.js"></sc' + 'ript>');
-			// show ugt tab on webstage and cms. release to live again by removing this line start
-			if ('#ugt13') {
-				$('#ugt13').css('display', 'inline');
-				$('.kiswidgt').remove();
-			};
-			console.log("addR ran");
-};
+				// show ugt tab on webstage and cms. release to live again by removing this line start
+				if ('#ugt13') {
+					$('#ugt13').css('display', 'inline');
+					$('.kiswidgt').remove();
+				};
+				// end line show tab on webstage and cms
 
-////////////////// end first if
-///////////////////////////////
+
+				// // add stagedev class for development work
+				// $('html').addClass('stagedev');
+				// // end add stagedev regardless
+
+		};// first if funciton
 
 
 
