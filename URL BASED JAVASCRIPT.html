@@ -8,7 +8,7 @@ $(document).ready(function() {
 var checkHOST = ["webstage.keele.ac.uk", "cms.keele.ac.uk"]
 var checkURL = [
 				//sublime sort watch for final comma
-				"\/18-reasons\/",
+				"\/18\-reasons\/",
 				"\/aboutus\/",
 				"\/alumni\/",
 				"\/americanstudies\/",
@@ -72,7 +72,7 @@ function HOSTer () {
 	};
 };
 
-if ( URLer() || HOSTer() ) {
+if ( HOSTer() || URLer() ) {
 	console.log('running responsive');
 	addResponsive();
 };
