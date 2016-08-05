@@ -26,9 +26,7 @@ var checkURL = [
 				"\/healthandrehabilitation\/",
 				"\/history\/",
 				"\/hums\/",
-				"\/hums\/",
 				"\/ilas\/",
-				"\/keelecard\/",
 				"\/keelecard\/",
 				"\/kms\/",
 				"\/law\/",
@@ -59,18 +57,18 @@ var checkURL = [
 function URLer () {
 	for(var p in checkURL){
 	   	if(window.location.pathname.indexOf(checkURL[p]) > -1) {
-			console.log('URLer');
+			console.log('URLer' + checkURL[p] );
 	   		return true;
-   		} else { console.log('not a URLer') };
+   		} else { console.log('not a URLer' + checkURL[p]) };
 	};
 };
 
 function HOSTer () {
 	for(var p in checkHOST){
    		if(window.location.hostname == (checkHOST[p]) ) {
-			console.log('HOSTer');
+			console.log('HOSTer' + checkHOST[p] );
    			return true;
-   		} else { console.log('not a HOSTer') };
+   		} else { console.log('not a HOSTer' + checkHOST[p]) };
 	};
 };
 
