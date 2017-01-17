@@ -4,9 +4,12 @@
 //use jQuery to load the CSS and JS at the end of the body
 $(document).ready(function() {
 
+var chkhname 	=	window.location.hostname.match(/cms.keele.ac.uk|webstage.keele.ac.uk|search.keele.ac.uk/) != null;
+var chkindexof 	=	document.URL.match(/\/aboutus|studyatkeele|faculties|pressreleases|clearing|privacy|mobile-app|contactus|keelecard|artskeele|18-reasons|events-welcome|offerholders|bus|ugcourses|graduation|kms|scm|nursingandmidwifery|music|filmstudies|english|americanstudies|sspp|history|lifesci|healthandrehabilitation|pharmacy|law|spgs|forensic|chemistry|gge|physics|psychology|spire|mcc|ilas|hums|newsevents|alumni|whatson|prospectus|social-media|foodanddrink|studentservices|outreach|opendays|make|lc|10-things-christmas|business\//) != null;
 
-		if (window.location.hostname == "webstage.keele.ac.uk" || window.location.hostname == "cms.keele.ac.uk" || window.location.hostname == "search.keele.ac.uk" || document.URL.indexOf("cb-ietest") != -1 || document.URL.indexOf("/pressreleases/") != -1 || document.URL.indexOf("/clearing/") != -1 || document.URL.indexOf("/hbetas/kpage/") != -1 || document.URL.indexOf("/smartminds/") != -1 || document.URL.indexOf("/smartbtec/") != -1 || document.URL.indexOf("/clear2015/") != -1 || document.URL.indexOf("/privacy/") != -1 || document.URL.indexOf("/mobile-app/") != -1 || document.URL.indexOf("/contactus/") != -1 || document.URL.indexOf("/keelecard/") != -1 || document.URL.indexOf("/artskeele/") != -1 || document.URL.indexOf("/18-reasons/") != -1  || document.URL.indexOf("/events-welcome/") != -1 || document.URL.indexOf("/offerholders/") != -1  || document.URL.indexOf("/bus/") != -1 || document.URL.indexOf("/ugcourses/") != -1 || document.URL.indexOf("/graduation/") != -1 || document.URL.indexOf("/kms/") != -1 || document.URL.indexOf("/scm/") != -1 || document.URL.indexOf("/scm/") != -1 || document.URL.indexOf("/nursingandmidwifery/") != -1 || document.URL.indexOf("/music/") != -1 || document.URL.indexOf("/filmstudies/") != -1 || document.URL.indexOf("/english/") != -1 || document.URL.indexOf("/americanstudies/") != -1 || document.URL.indexOf("/sspp/") != -1 || document.URL.indexOf("/history/") != -1 || document.URL.indexOf("/lifesci/") != -1 || document.URL.indexOf("/healthandrehabilitation/") != -1  || document.URL.indexOf("/pharmacy/") != -1  || document.URL.indexOf("/law/") != -1  || document.URL.indexOf("/spgs/") != -1  || document.URL.indexOf("/forensic/") != -1  || document.URL.indexOf("/chemistry/") != -1  || document.URL.indexOf("/gge/") != -1  || document.URL.indexOf("/physics/") != -1  || document.URL.indexOf("/psychology/") != -1  || document.URL.indexOf("/spire/") != -1  || document.URL.indexOf("/mcc/") != -1  || document.URL.indexOf("/ilas/") != -1  || document.URL.indexOf("/hums/") != -1 || document.URL.indexOf("/newsevents/") != -1 || document.URL.indexOf("/alumni/") != -1  || document.URL.indexOf("/whatson/") != -1 || document.URL.indexOf("/prospectus/") != -1 || document.URL.indexOf("/social-media/") != -1 || document.URL.indexOf("/foodanddrink/") != -1  || document.URL.indexOf("/studentservices/") != -1 || document.URL.indexOf("/outreach/") != -1 || document.URL.indexOf("/opendays/") != -1 || document.URL.indexOf("/make/") != -1 || document.URL.indexOf("/lc/") != -1 || document.URL.indexOf("/10-things-christmas/") != -1 || document.URL.indexOf("/business/") != -1  ) {
 
+		if ( chkhname || chkindexof )  {
+				// console.log('yes');
 				// append mobile scripts
 				$('body').append('<link rel="stylesheet" type="text/css" href="/jq/kresp/kresp.css"><script type="text/javascript" src="/jq/kresp/kresp.js"></sc' + 'ript>');
 
@@ -22,41 +25,17 @@ $(document).ready(function() {
 				// $('html').addClass('stagedev');
 				// // end add stagedev regardless
 
-		};// first if funciton
-
-
-
+		}; // .main chkr
 
 		if (window.location.hostname == "webstage.keele.ac.uk" || window.location.hostname == "cms.keele.ac.uk") {
 				// add stagedev class for development work
 				$('html').addClass('stagedev');
 				// end add stagedev regardless	
-		}; // end add stagedev to webstage and cms.keele
-
-
-
-// ////////////////////////////////////////////////////////
-// // LIVE SITE ONLY FOR HIDING UGT COURSE CMA CHANGES. DELETE THIS BLOCK ONCE COMPLETE
-// 		if (window.location.hostname == "www.keele.ac.uk") {
-// 				// start hiding items only on webstage
-// 				if ('#keymodeofstudy') {
-// 					$('#keymodeofstudy').css('display', 'none');
-// 				};
-// 				if ('#keydurationofstudy') {
-// 					$('#keydurationofstudy').css('display', 'none');
-// 				};
-// 		}; // end add stagedev to webstage and cms.keele
-// // END LIVE SITE HIDING
-// ////////////////////////////////////////////////////////
-
-
+		}; // .webstage .cms.keele
 
 		if (window.location.hostname == "www.keele.ac.uk" ) {
 				$('html').addClass('liveKeele');
-		}; // end livekeele tag
-
-
-
+		}; // .keele.ac.uk
 
 		if (window.location.hostname == "webstage.keele.ac.uk" || window.location.hostname == "cms.keele.ac.uk" || window.location.hostname == "search.keele.ac.uk") {
 				// start banner toggle styles
@@ -65,10 +44,7 @@ $(document).ready(function() {
 					/* Act on the event */
 					$('html').toggleClass('stagedev');
 				}); // banner instance toggle styles
-		};// second if funciton
-
-
-
+		};// .webstage .cms .search
 
 		// if (window.location.hostname == "webstage.keele.ac.uk" || window.location.hostname == "cms.keele.ac.uk" ) {
 		// 		// append justice speed scripts
@@ -82,6 +58,8 @@ $(document).ready(function() {
 
 		// end .liveKeele class to keep old School styles alive
 		////	
+
+
 
 }); //document ready
 </script>
